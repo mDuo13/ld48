@@ -19,8 +19,8 @@
       "reacts": 1,
       "blocking": 1,
       "msg": "Oh hello, funny meeting someone else here. Welcome to my dreamy nap spot. What do you mean there's no treasure? I'm here, aren't I?",
-      "msg2": "Look, maybe the real treasure was the treasure you picked up along the way. How many coins have you pocketed? Nevermind, don't tell me. I don't need money, I'm a cat. Funny, the old man said the same thing. About the treasure, I mean.",
-      "msg3": "Where is he? Don't know, don't care. Dowsing rods? Yeah, they react to my fur. Lots of static electricity. Anyway, I'm going back to sleep. Maybe you should wake up?",
+      "msg2": "Look, maybe the real treasure was the treasure you picked up along the way. How many coins have you pocketed? Nevermind, don't tell me. I already got an earful from the old man about the stuff he picked up.",
+      "msg3": "Where is he? Don't know, don't care. Dowsing rods? Yeah, they react to my fur. Lots of static electricity. Anyway, I'm going back to sleep. Maybe you should go to sleep, too? Or perhaps the opposite...",
       "next": "index.html",
       "img": "cat.png",
       "fadeto": "white",
@@ -139,16 +139,12 @@
         },
         "gem1": {
           "name": "Shiny Gem",
-          "x": -1,
-          "y": -1,
           "reacts": 2,
           "visible": 1,
           "img": "gem.png"
         },
         "gem2": {
           "name": "Shiny Gem",
-          "x": -1,
-          "y": -1,
           "reacts": 2,
           "visible": 1,
           "img": "gem.png"

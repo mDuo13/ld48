@@ -18,6 +18,15 @@
       "msg": "I am beginning to doubt where I am. I've scarcely seen a soul since entering that first hole, yet my curiosity compels me to delve deeper. Who made these tunnels? And what awaits at the end? I hope it's worth it.",
       "img": "note.png"
     },
+    "note2": {
+      "name": "A word of warning",
+      "x": -1,
+      "y": -1,
+      "interact": "read",
+      "reacts": 1,
+      "msg": "I am starting to doubt the wisdom of carrying too many gems. The dowsing rods get staggeringly hot in reaction to everything, making them harder to use. Yet I can't seem to find it in me to dispose of them.",
+      "img": "note.png"
+    },
     "hole": {
       "name": "Hole",
       "reacts": 1,
@@ -42,6 +51,14 @@
       "reacts": 1,
       "interact": "collect",
       "img": "coin.png"
+    },
+    "gem1": {
+      "name": "Shiny Gem",
+      "x": -1,
+      "y": -1,
+      "reacts": 2,
+      "interact": "collect",
+      "img": "gem.png"
     },
     "key1": {
       "name": "A convenient key",
@@ -112,17 +129,17 @@
       "y": 0,
       "blocking": 1
     },
-    "wall11": {
+    "wall12": {
       "x": 9,
       "y": 1,
       "blocking": 1
     },
-    "wall12": {
+    "wall13": {
       "x": 9,
       "y": 2,
       "blocking": 1
     },
-    "wall13": {
+    "wall14": {
       "x": 9,
       "y": 7,
       "blocking": 1
@@ -137,22 +154,6 @@
           "name": "Dowsing Rod",
           "img": "dowsing.png",
           "visible": 1
-        },
-        "gem1": {
-          "name": "Shiny Gem",
-          "x": -1,
-          "y": -1,
-          "reacts": 2,
-          "visible": 1,
-          "img": "gem.png"
-        },
-        "gem2": {
-          "name": "Shiny Gem",
-          "x": -1,
-          "y": -1,
-          "reacts": 2,
-          "visible": 1,
-          "img": "gem.png"
         }
       },
       "visible": 1

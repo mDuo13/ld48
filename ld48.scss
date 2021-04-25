@@ -17,10 +17,15 @@ $sq_bg: url(dirt1.png);
 $softkey_size: 80px;
 $pfp_size: 96px;
 
-body {
+.level {
+  display: flex;
   margin: 0;
   padding: 0;
-  display: flex;
+}
+
+.homepage {
+  margin: 0;
+  padding: $outermg;
 }
 
 .d-none {
@@ -183,6 +188,20 @@ i {
   z-index: 2;
 }
 
+.start {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  text-decoration: none;
+  border: 4px $gridcolor outset;
+  border-radius: 4px;
+  margin: $outermg (10 * $outermg);
+
+  &:active {
+    border-style: inset;
+  }
+}
+
 .softkeys {
   position: fixed;
   bottom: ($outermg * 4);
@@ -229,4 +248,12 @@ i {
   .softkeys {
     display: none;
   }
+}
+
+.congrats {
+  padding: (2 * $outermg);
+  border-style: double;
+  border-width: 5px;
+  border-color: $gridcolor;
+  border-radius: 5px;
 }

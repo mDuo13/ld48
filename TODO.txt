@@ -2,22 +2,16 @@ MECHANICS
     different types of reactivity
     keys get used up???
     sound, vibration?
-    carry things to next map
     v-shape vibing
 
-GRAPHICS
-    unique maps
-    cat
+GRAPHICS -- done??
 
 STORY
-    cat
-    per mechanics
+    possible touch-ups or more notes
 
 POLISH
-    src
     upload
     more efficient coords?
-    credits
     do face/move based on keypress length
     confirm prioritize of multiple interactions
     feedback when you don't have enough for the lock

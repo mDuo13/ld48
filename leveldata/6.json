@@ -1,6 +1,6 @@
 {
   "gridsize": 10,
-  "bg": "url(pools.png)",
+  "bg": "url(bridges.png)",
   "objs": {
     "player": {
       "name": "You are here",
@@ -14,11 +14,11 @@
       "name": "Hole",
       "reacts": 1,
       "interact": "clear",
-      "next": "6.html",
+      "next": "final.html",
       "img": "hole.png"
     },
     "cover": {
-      "name": "Is that... glitter?? (*shivers*)",
+      "name": "Thank the fae it's not glitter (*shivers*)",
       "x": -1,
       "y": -1,
       "reacts": 1,
@@ -29,12 +29,12 @@
     },
     "note": {
       "name": "More notes, huh...",
-      "x": 0,
-      "y": 5,
+      "x": 3,
+      "y": 3,
       "interact": "read",
-      "reacts": 1,
-      "msg": "What are these sparks that flit to and fro? I cannot help but hope the answer lies further in.",
-      "img": "note.png"
+      "msg": "This deep in, I'm so staggered that I doubt my own sanity... It seems some sparkles are invisible to the eye until I grasp them. Yet the dowsing rods can still find them. My working hypothesis is they both operate on some kind of fae magic.",
+      "img": "note.png",
+      "visible": 1
     },
     "coin1": {
       "name": "Coin",
@@ -47,35 +47,65 @@
     "sparkle1": {
       "name": "Shiny!",
       "x": 1,
-      "y": 1,
+      "y": 0,
       "reacts": 1,
-      "move_y": "[1,8]",
+      "move_x": "[0,9]",
       "interact": "collect",
       "key_power": 1,
-      "img": "sparkle.png",
-      "visible": 1
+      "img": "sparkle.png"
     },
     "sparkle2": {
       "name": "Shiny!",
-      "x": 8,
-      "y": 2,
+      "x": 0,
+      "y": 9,
       "reacts": 1,
-      "move_y": "[1,8]",
+      "move_y": "[2,9]",
       "interact": "collect",
       "key_power": 1,
-      "img": "sparkle.png",
-      "visible": 1
+      "img": "sparkle.png"
     },
     "sparkle3": {
       "name": "Shiny!",
-      "x": 5,
+      "x": 3,
       "y": 8,
       "reacts": 1,
-      "move_x": "[1,8]",
+      "move_x": "[3,8]",
       "interact": "collect",
       "key_power": 1,
-      "img": "sparkle.png",
-      "visible": 1
+      "img": "sparkle.png"
+    },
+    "wall1": {
+      "x": 7,
+      "y": 5,
+      "blocking": 1
+    },
+    "wall2": {
+      "x": 6,
+      "y": 5,
+      "blocking": 1
+    },
+    "wall3": {
+      "x": 5,
+      "y": 5,
+      "blocking": 1
+    },
+    "wall4": {
+      "x": 4,
+      "y": 5,
+      "blocking": 1
+    },
+    "wall5": {
+      "x": 5,
+      "y": 1,
+      "blocking": 1
+    },
+    "bramble1": {
+      "name": "Nasty bushes, steer clear",
+      "x": 7,
+      "y": 6,
+      "visible": 1,
+      "blocking": 1,
+      "img": "bramble.png"
     }
   },
   "hud": {
@@ -87,30 +117,6 @@
           "name": "Dowsing Rod",
           "img": "dowsing.png",
           "visible": 1
-        },
-        "gem1": {
-          "name": "Shiny Gem",
-          "x": -1,
-          "y": -1,
-          "reacts": 2,
-          "visible": 1,
-          "img": "gem.png"
-        },
-        "gem2": {
-          "name": "Shiny Gem",
-          "x": -1,
-          "y": -1,
-          "reacts": 2,
-          "visible": 1,
-          "img": "gem.png"
-        },
-        "gem3": {
-          "name": "Shiny Gem",
-          "x": -1,
-          "y": -1,
-          "reacts": 2,
-          "visible": 1,
-          "img": "gem.png"
         }
       },
       "visible": 1

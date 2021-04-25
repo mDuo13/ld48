@@ -194,7 +194,13 @@ function clear(o) {
   overlay.style["z-index"] = 5
   overlay.style["opacity"] = 100
   setTimeout(() => {
-    window.location = o.dataset.next
+    // Carry over coins and gems
+    const ncoins = $$('#hud_inv i[title="Coin"]').length
+    const ngems = $$('#hud_inv i[title="Shiny Gem"]').length
+    let qs = "?"
+    if (ncoins) qs += `coins=${ncoins}&`
+    if (ngems) qs += `gems=${ngems}`
+    window.location = o.dataset.next + qs
   }, 1000)
 }
 
@@ -378,7 +384,24 @@ function handleInput(input) {
   update_str()
 }
 
+function load_from_params(qp) {
+  if (qp.has("gems")) {
+    const ngems = parseInt(qp.get("gems"))
+    for (let i=1; i<=ngems; i++) {
+      $("#hud_inv").insertAdjacentHTML("beforeend", `<i title="Shiny Gem" id="saved_gem${i}" style="background-image: url(&quot;gem.png&quot;)" data-reacts="2" data-visible="1"></i>`)
+    }
+  }
+  if (qp.has("coins")) {
+    const ncoins = parseInt(qp.get("coins"))
+    for (let i=1; i<=ncoins; i++) {
+      $("#hud_inv").insertAdjacentHTML("beforeend", `<i title="Coin" id="saved_coin${i}" style="background-image: url(&quot;coin.png&quot;)" data-visible="1"></i>`)
+    }
+  }
+}
+
 function startup() {
+  load_from_params(new URLSearchParams(window.location.search))
+
   GRIDMAX = $("body").dataset.gridsize - 1
   // Init object positions and facings
   $$('.map i[data-x="-1"][data-y="-1"]').forEach(o => {

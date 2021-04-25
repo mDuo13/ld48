@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="ld48.css" />
   <script src="ld48.js"></script>
 </head>
-<body data-gridsize="{{gridsize}}">
+<body class="level" data-gridsize="{{gridsize}}">
 {% macro obj(oname, o) %}
 <i {% if o.name %}title="{{o.name}}"{% endif %} id="{{oname}}" {% if not o.visible %}class="d-none" {% endif %}{% if o.img %}style="background-image: url({{o.img}})"{% endif %} {% for okey,oval in o.items() %}{% if okey != "text" %}data-{{okey}}="{{oval}}" {% endif %}{% endfor %}>{{o.text}}</i>
 {% endmacro %}

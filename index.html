@@ -1,0 +1,73 @@
+<!DOCTYPE  html>
+<html>
+<head>
+  <title>Vibin' Secrets</title>
+  <meta charset="utf8" />
+  <link rel="stylesheet" href="ld48.css" />
+  <script type="application/javascript">
+  function togglelevelselect(evt) {
+    document.querySelector(".levelselect ul").classList.toggle("d-none")
+  }
+  </script>
+</head>
+<body class="homepage">
+
+<h1>Vibin' Secrets</h1>
+<h2>A game of dowsing and hidden objects for <a href="https://ldjam.com/events/ludum-dare/48">Ludum Dare 48</a></h2>
+
+<section class="desc">
+<p>You've found a mysterious pair of dowsing rods in the attic and decided to go take them for a spin nearby to see if they do anything.</p>
+<p>Requires a modern browser (i.e. not Internet Explorer). Not optimized for mobile, but maybe playable.</p>
+
+<a class="start" href="1.html">Start</a>
+
+<section class="levelselect">
+  <h3>Level Select</h3>
+  <button onclick="togglelevelselect()">Show / Hide</button>
+  <ul class="d-none">
+    <li><a href="1.html">Level 1</a></li>
+    <li><a href="2.html">Level 2</a></li>
+    <li><a href="3.html">Level 3</a></li>
+    <li><a href="4.html?gems=2">Level 4</a></li>
+    <li><a href="5.html?gems=3">Level 5</a></li>
+    <li><a href="6.html?gems=3">Level 6</a></li>
+    <li><a href="final.html?gems=3">Final</a></li>
+  </ul>
+</section><!--/.levelselect-->
+
+<section class="credits">
+  <h3>Credits</h3>
+  <dl>
+    <dt>Design, programming, writing, graphics, photography, playtesting, etc.</dt>
+    <dd><a href="https://mduo13.com/">mDuo13</a></dd>
+
+    <dt>Distractions, reference, inspiration</dt>
+    <dd><a href="cleocredit.jpg">Cleopatra</a></dd>
+  </dl>
+
+  <h3>Tools</h3>
+  <ul>
+    <li><a href="https://firefox.com/">Firefox</a> - Platform, dev tools, modern HTML5 and JavaScript</li>
+    <li><a href="https://jinja.palletsprojects.com/">Jinja</a> - HTML templating for levels</li>
+    <li><a href="https://www.gimp.org/">GNU Image Manipulation Program</a> - Pixel art, photo editing</li>
+    <li><a href="https://github.com/sass/sassc">SassC</a> - SCSS compilation</li>
+    <li><a href="https://imagemagick.org/">ImageMagick</a> - pixel image scaling</li>
+    <li><a href="https://atom.io/">Atom</a> - text editor</li>
+  </ul>
+</section>
+
+<script type="application/javascript">
+(function(){
+const qp = new URLSearchParams(window.location.search)
+if (qp.has("coins")) {
+  const ncoins = parseInt(qp.get("coins"))
+  if (ncoins == 6) {
+    document.querySelector("body").insertAdjacentHTML('afterbegin', '<p class="congrats">🎉 Congrats on finding all 6 coins!</p>')
+  } else if (ncoins > 6) {
+    document.querySelector("body").insertAdjacentHTML('afterbegin', '<p class="congrats">🎉 Congrats on being a dirty cheater and/or finding a bug. There are only supposed to be 6 coins! 😂</p>')
+  }
+}
+})();
+</script>
+</body>
+</html>
