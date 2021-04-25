@@ -14,7 +14,7 @@
       "name": "Hole",
       "reacts": 1,
       "interact": "clear",
-      "next": "index.html",
+      "next": "final.html",
       "img": "hole.png"
     },
     "cover": {

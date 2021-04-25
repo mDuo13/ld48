@@ -1,0 +1,174 @@
+{
+  "gridsize": 10,
+  "bg": "url(final.png)",
+  "objs": {
+    "player": {
+      "name": "You are here",
+      "x": 5,
+      "y": 8,
+      "visible": 1,
+      "img": "dowsing2.png",
+      "facing": 0
+    },
+    "cat": {
+      "name": "A floofy cat???",
+      "x": 4,
+      "y": 3,
+      "interact": "read",
+      "pfp": "catprofile.png",
+      "reacts": 1,
+      "blocking": 1,
+      "msg": "Oh hello, funny meeting someone else here. Welcome to my dreamy nap spot. What do you mean there's no treasure? I'm here, aren't I?",
+      "msg2": "Look, maybe the real treasure was the treasure you picked up along the way. How many coins have you pocketed? Nevermind, don't tell me. I don't need money, I'm a cat. Funny, the old man said the same thing. About the treasure, I mean.",
+      "msg3": "Where is he? Don't know, don't care. Dowsing rods? Yeah, they react to my fur. Lots of static electricity. Anyway, I'm going back to sleep. Maybe you should wake up?",
+      "next": "index.html",
+      "img": "cat.png",
+      "fadeto": "white",
+      "visible": 1
+    },
+    "coin1": {
+      "name": "Coin",
+      "x": -1,
+      "y": -1,
+      "reacts": 1,
+      "interact": "collect",
+      "img": "coin.png"
+    },
+    "sparkle1": {
+      "name": "Shiny!",
+      "x": 1,
+      "y": 2,
+      "reacts": 1,
+      "move_y": "[2,7]",
+      "interact": "collect",
+      "key_power": 1,
+      "img": "sparkle.png",
+      "visible": 1
+    },
+    "sparkle2": {
+      "name": "Shiny!",
+      "x": 8,
+      "y": 7,
+      "reacts": 1,
+      "move_y": "[2,8]",
+      "interact": "collect",
+      "key_power": 1,
+      "img": "sparkle.png",
+      "visible": 1
+    },
+    "wall1": {
+      "x": 0,
+      "y": 0,
+      "blocking": 1
+    },
+    "wall2": {
+      "x": 1,
+      "y": 0,
+      "blocking": 1
+    },
+    "wall3": {
+      "x": 2,
+      "y": 0,
+      "blocking": 1
+    },
+    "wall4": {
+      "x": 0,
+      "y": 1,
+      "blocking": 1
+    },
+    "wall5": {
+      "x": 0,
+      "y": 2,
+      "blocking": 1
+    },
+    "wall6": {
+      "x": 9,
+      "y": 0,
+      "blocking": 1
+    },
+    "wall7": {
+      "x": 9,
+      "y": 9,
+      "blocking": 1
+    },
+    "wall8": {
+      "x": 0,
+      "y": 9,
+      "blocking": 1
+    },
+    "wall9": {
+      "x": 1,
+      "y": 9,
+      "blocking": 1
+    },
+    "wall10": {
+      "x": 0,
+      "y": 8,
+      "blocking": 1
+    },
+    "wall11": {
+      "x": 9,
+      "y": 8,
+      "blocking": 1
+    },
+    "wall12": {
+      "x": 8,
+      "y": 9,
+      "blocking": 1
+    },
+    "wall13": {
+      "x": 8,
+      "y": 0,
+      "blocking": 1
+    },
+    "wall14": {
+      "x": 9,
+      "y": 1,
+      "blocking": 1
+    }
+  },
+  "hud": {
+    "inv": {
+      "name": "Inventory",
+      "type": "collection",
+      "contents": {
+        "rod": {
+          "name": "Dowsing Rod",
+          "img": "dowsing.png",
+          "visible": 1
+        },
+        "gem1": {
+          "name": "Shiny Gem",
+          "x": -1,
+          "y": -1,
+          "reacts": 2,
+          "visible": 1,
+          "img": "gem.png"
+        },
+        "gem2": {
+          "name": "Shiny Gem",
+          "x": -1,
+          "y": -1,
+          "reacts": 2,
+          "visible": 1,
+          "img": "gem.png"
+        }
+      },
+      "visible": 1
+    },
+    "str": {
+      "name": "Vibration",
+      "type": "bar",
+      "val": 0.5,
+      "visible": 1,
+      "tooltip": "Activates when you're pointed at something reactive."
+    },
+    "temp": {
+      "name": "Temperature",
+      "type": "bar",
+      "val": 0,
+      "visible": 1,
+      "tooltip": "Activates when you're near reactive things. Stronger effect with more gems."
+    }
+  }
+}

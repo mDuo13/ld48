@@ -15,6 +15,7 @@ $overlay_bg: black;
 $gridsizes: 4, 8, 10, 15;
 $sq_bg: url(dirt1.png);
 $softkey_size: 80px;
+$pfp_size: 96px;
 
 body {
   margin: 0;
@@ -164,6 +165,17 @@ i {
     background-color: white;
     z-index: 4;
     box-sizing: border-box;
+
+    &.w-pfp {
+      display: flex;
+
+      img {
+        width: $pfp_size;
+        height: $pfp_size;
+        flex-basis: 0;
+        margin-right: $outermg;
+      }
+    }
   }
 }
 

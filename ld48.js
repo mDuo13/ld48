@@ -189,6 +189,7 @@ function collect(o) {
 
 function clear(o) {
   const overlay = $(".overlay")
+  if (o.dataset.fadeto) { overlay.style.background = o.dataset.fadeto }
   overlay.style["z-index"] = 5
   overlay.style["z-index"] = 5
   overlay.style["opacity"] = 100
@@ -197,13 +198,37 @@ function clear(o) {
   }, 1000)
 }
 
-function read(o) {
+function next_msg_field(fieldname) {
+  if (fieldname == "msg") return "msg2"
+  const m = fieldname.match(/^msg([0-9])$/)
+  if (!m) return undefined
+  return `msg${parseInt(m[1]) + 1}`
+}
+
+function read(o, msg_field) {
+  if (msg_field === undefined) msg_field = "msg"
   let tb = document.createElement("p")
   tb.classList.add("textbox")
-  tb.textContent = o.dataset.msg
+  tb.textContent = o.dataset[msg_field]
   let lbl = document.createElement("label")
   lbl.textContent = o.dataset.name ? o.dataset.name : "Message"
   tb.appendChild(lbl)
+  if (o.dataset.pfp) {
+    let pfp = document.createElement("img")
+    pfp.src = o.dataset.pfp
+    pfp.alt = `${lbl.textContent} profile picture`
+    tb.classList.add("w-pfp")
+    tb.prepend(pfp)
+  }
+  let nmf = next_msg_field(msg_field)
+  if (nmf && o.dataset[nmf]) {
+    tb.dataset.nmf = nmf
+    tb.dataset.from_obj = o.id
+  } else if (o.dataset.next) {// special case for endgame
+    tb.dataset.next = o.dataset.next
+    tb.dataset.fadeto = o.dataset.fadeto
+  }
+
   $(".hud").appendChild(tb)
 }
 
@@ -288,11 +313,11 @@ function automoveObj(o, axis) {
   }
   let did_move = tryMove(o, dx, dy)
   a = parseInt(o.dataset[axis]) // post-move value
-  if (a == path[0] || a == path[1]) { // edge of path, turn around
+  if (a == path[0] || a == path[1] || !did_move) { // edge of path, turn around
     da = -da
     o.dataset[`d${axis}`] = da
   }
-  // TODO: maybe turn around if bump into something?
+
 }
 
 function move_npcs() {
@@ -310,7 +335,15 @@ function handleInput(input) {
   let tbs = $$(".textbox")
   if (tbs.length) {
     // Dismiss existing text box
-    tbs.forEach((tb) => {tb.remove()})
+    tbs.forEach((tb) => {
+      if (tb.dataset.nmf) { // Prompt a follow-up message box
+        let o = $(`#${tb.dataset.from_obj}`)
+        read(o, tb.dataset.nmf)
+      } else if (tb.dataset.next) {
+        clear(tb)
+      }
+      tb.remove()
+    })
     return
   }
 
