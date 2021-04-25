@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 ## General purpose commandline script for Jinja templates
 ## © 2021 Rome Reginelli (mDuo13)
+## This file ONLY is subject to the 3-clause BSD license:
+## https://opensource.org/licenses/BSD-3-Clause
 
 import argparse
 import sys

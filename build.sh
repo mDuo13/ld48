@@ -1,5 +1,5 @@
 #!/bin/bash
-OUTDIR=/another/site/ld48
+OUTDIR=out
 mkdir -p $OUTDIR
 for f in `ls leveldata`; do
   jinjafy.py -i level.html.jinja2 -o $OUTDIR/${f%.json}.html -j leveldata/$f
