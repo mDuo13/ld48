@@ -1,0 +1,52 @@
+{
+  "gridsize": 4,
+  "bg": "url(map1.png)",
+  "objs": {
+    "player": {
+      "name": "You are here",
+      "x": 2,
+      "y": 3,
+      "facing": 0,
+      "visible": 1,
+      "img": "dowsing2.png"
+    },
+    "hole": {
+      "name": "A mysterious hole...",
+      "x": -1,
+      "y": -1,
+      "reacts": 1,
+      "interact": "clear",
+      "next": "2.html",
+      "img": "hole.png"
+    },
+    "note": {
+      "name": "Someone's note?",
+      "x": 1,
+      "y": 1,
+      "visible": 1,
+      "interact": "read",
+      "msg": "I took that old pair of dowsing rods from the attic to the park, to see if there was any truth to the rumor they could find treasure. They work! I had to be pointing straight at it, but my dowsing rod discovered a tunnel I hadn't seen before that seems to lead into a mysterious place. The entrance is where the vibration is at its maximum. Staggering!",
+      "revealhud": "str",
+      "img": "note.png"
+    }
+  },
+  "hud": {
+    "inv": {
+      "name": "Inventory",
+      "type": "collection",
+      "contents": {
+        "rod": {
+          "name": "Dowsing Rod",
+          "img": "dowsing.png",
+          "visible": 1
+        }
+      },
+      "visible": 1
+    },
+    "str": {
+      "name": "Vibration",
+      "type": "bar",
+      "tooltip": "Activates when you're pointed at something reactive."
+    }
+  }
+}

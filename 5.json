@@ -1,0 +1,133 @@
+{
+  "gridsize": 10,
+  "bg": "url(pools.png)",
+  "objs": {
+    "player": {
+      "name": "You are here",
+      "x": 9,
+      "y": 5,
+      "visible": 1,
+      "img": "dowsing2.png",
+      "facing": 270
+    },
+    "hole": {
+      "name": "Hole",
+      "reacts": 1,
+      "interact": "clear",
+      "next": "6.html",
+      "img": "hole.png"
+    },
+    "cover": {
+      "name": "Is that... glitter?? (*shivers*)",
+      "x": -1,
+      "y": -1,
+      "reacts": 1,
+      "interact": "open",
+      "lock_threshold": 3,
+      "unlocks": "hole",
+      "img": "sparklecover.png"
+    },
+    "note": {
+      "name": "More notes, huh...",
+      "x": 0,
+      "y": 5,
+      "interact": "read",
+      "reacts": 1,
+      "msg": "What are these sparks that flit to and fro? I cannot help but hope the answer lies further in.",
+      "img": "note.png"
+    },
+    "coin1": {
+      "name": "Coin",
+      "x": -1,
+      "y": -1,
+      "reacts": 1,
+      "interact": "collect",
+      "img": "coin.png"
+    },
+    "sparkle1": {
+      "name": "Shiny!",
+      "x": 1,
+      "y": 1,
+      "reacts": 1,
+      "move_y": "[1,8]",
+      "interact": "collect",
+      "key_power": 1,
+      "img": "sparkle.png",
+      "visible": 1
+    },
+    "sparkle2": {
+      "name": "Shiny!",
+      "x": 8,
+      "y": 2,
+      "reacts": 1,
+      "move_y": "[1,8]",
+      "interact": "collect",
+      "key_power": 1,
+      "img": "sparkle.png",
+      "visible": 1
+    },
+    "sparkle3": {
+      "name": "Shiny!",
+      "x": 5,
+      "y": 8,
+      "reacts": 1,
+      "move_x": "[1,8]",
+      "interact": "collect",
+      "key_power": 1,
+      "img": "sparkle.png",
+      "visible": 1
+    }
+  },
+  "hud": {
+    "inv": {
+      "name": "Inventory",
+      "type": "collection",
+      "contents": {
+        "rod": {
+          "name": "Dowsing Rod",
+          "img": "dowsing.png",
+          "visible": 1
+        },
+        "gem1": {
+          "name": "Shiny Gem",
+          "x": -1,
+          "y": -1,
+          "reacts": 2,
+          "visible": 1,
+          "img": "gem.png"
+        },
+        "gem2": {
+          "name": "Shiny Gem",
+          "x": -1,
+          "y": -1,
+          "reacts": 2,
+          "visible": 1,
+          "img": "gem.png"
+        },
+        "gem3": {
+          "name": "Shiny Gem",
+          "x": -1,
+          "y": -1,
+          "reacts": 2,
+          "visible": 1,
+          "img": "gem.png"
+        }
+      },
+      "visible": 1
+    },
+    "str": {
+      "name": "Vibration",
+      "type": "bar",
+      "val": 0.5,
+      "visible": 1,
+      "tooltip": "Activates when you're pointed at something reactive."
+    },
+    "temp": {
+      "name": "Temperature",
+      "type": "bar",
+      "val": 0,
+      "visible": 1,
+      "tooltip": "Activates when you're near reactive things. Stronger effect with more gems."
+    }
+  }
+}

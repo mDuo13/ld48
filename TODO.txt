@@ -1,0 +1,23 @@
+MECHANICS
+    different types of reactivity
+    keys get used up???
+    sound, vibration?
+    carry things to next map
+    v-shape vibing
+
+GRAPHICS
+    unique maps
+    cat
+
+STORY
+    cat
+    per mechanics
+
+POLISH
+    src
+    upload
+    more efficient coords?
+    credits
+    do face/move based on keypress length
+    confirm prioritize of multiple interactions
+    feedback when you don't have enough for the lock

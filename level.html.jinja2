@@ -1,0 +1,52 @@
+<!DOCTYPE  html>
+<html>
+<head>
+  <title>ld48</title>
+  <meta charset="utf8" />
+  <meta name="viewport" content="width={{(gridsize*48)+250}}, initial-scale=1">
+  <link rel="stylesheet" href="ld48.css" />
+  <script src="ld48.js"></script>
+</head>
+<body data-gridsize="{{gridsize}}">
+{% macro obj(oname, o) %}
+<i {% if o.name %}title="{{o.name}}"{% endif %} id="{{oname}}" {% if not o.visible %}class="d-none" {% endif %}{% if o.img %}style="background-image: url({{o.img}})"{% endif %} {% for okey,oval in o.items() %}{%if okey != "text"%}data-{{okey}}="{{oval}}" {% endif %}{% endfor %}>{{o.text}}</i>
+{% endmacro %}
+
+<div class="overlay">&nbsp;</div>
+
+<div class="map maingrid--{{gridsize}}" style="background: {{bg}}">
+  {#{% for x in range(gridsize) %}
+    {% for y in range(gridsize) %}
+  <div class="sq" data-x="{{x}}" data-y="{{y}}">&nbsp;</div>
+    {% endfor %}
+  {% endfor %}#}
+  {% for oname,o in objs.items() %}
+  {{obj(oname, o)}}
+  {% endfor %}
+</div><!--/.maingrid-->
+
+<div class="hud">
+  {% for hname,h in hud.items() %}
+  <div id="hud_{{hname}}" class="{{h.type}}{% if not h.visible %} invis{% endif %}" data-val="{{h.val}}" {% if h.tooltip %}title="{{h.tooltip}}"{% endif %}>
+    {% if h.name %}<label>{{h.name}}</label>{% endif %}
+    {% if h.type == "bar" %}<span><u></u></span>{% endif %}
+    {% if h.type == "collection" %}{% for oname,o in h.contents.items() %}
+    {{obj(oname, o)}}
+    {% endfor %}{% endif %}
+  </div>
+  {% endfor %}
+  <div class="help">
+    <p>Arrow keys or WASD to move.</p>
+    <p>Enter or Space to interact.</p>
+  </div><!--/.help-->
+</div><!--/.hud-->
+
+<div class="softkeys">
+  {% for key in ["up", "left", "down", "right"] %}
+  <button id="key_{{key}}">→</button>
+  {% endfor %}
+  <button id="key_interact">✅</button>
+</div>
+
+</body>
+</html>

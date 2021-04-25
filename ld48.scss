@@ -1,0 +1,220 @@
+$gridcolor: black;
+$sqsize: 48px;
+$objfont: 35px;
+$barw: 200px;
+$msgw_min: 200px;
+$msgw_max: $sqsize * 10;
+$barh: 15px;
+$outermg: 10px;
+$barbg: blue;
+$bounce_px: 5px;
+$ui_bg: black;
+$ui_fg: white;
+$ui_label_height: 10px;
+$overlay_bg: black;
+$gridsizes: 4, 8, 10, 15;
+$sq_bg: url(dirt1.png);
+$softkey_size: 80px;
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.d-none {
+  display: none;
+  opacity: 0;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $overlay_bg;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+@keyframes vibe_w {
+  from {width: 0; right: 0;}
+  to {width: $bounce_px; right: (-$bounce_px)}
+}
+
+.maingrid {
+  margin: $outermg;
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid $gridcolor;
+  display: inline-grid;
+
+  @each $gridsize in $gridsizes {
+    &--#{$gridsize} {
+      @extend .maingrid;
+      //grid-template-columns: repeat($gridsize, $sqsize);
+      //grid-template-rows: repeat($gridsize, $sqsize);
+      width: ($sqsize * $gridsize + 2);
+      min-width: ($sqsize * $gridsize + 2);
+      height: ($sqsize * $gridsize + 2);
+      min-height: ($sqsize * $gridsize + 2);
+    }
+  }
+
+  .sq {
+    // border-style: dashed;
+    // border-color: $gridcolor;
+    // border-width: 1px 1px 0 0;
+    height: $sqsize;
+    background: $sq_bg;
+  }
+
+  i {
+    position: absolute;
+  }
+}
+
+i {
+  font-style: normal;
+  font-weight: unset;
+  font-size: $objfont;
+  padding: 2px;
+  width: 48px;
+  height: 48px;
+  box-sizing: border-box;
+  transition: left 200ms, top 200ms;
+}
+
+.hud {
+  display: flex;
+  flex-direction: column;
+  margin: $outermg;
+
+  > * {
+    border-style: double;
+    border-width: 5px;
+    border-color: $gridcolor;
+    border-radius: 5px;
+    margin-bottom: $outermg;
+    position: relative;
+    transition: opacity 600ms;
+    opacity: 1.0;
+  }
+
+  .help {
+    border-style: none;
+  }
+
+  .invis {
+    opacity: 0;
+  }
+
+  label {
+    position: absolute;
+    top: -$ui_label_height;
+    left: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: $ui_bg;
+    color: $ui_fg;
+    z-index: 3;
+  }
+
+  .bar {
+    width: $barw;
+    height: $barh;
+
+    span {
+      position: absolute;
+      left: 0;
+      height: $barh;
+      background: $barbg;
+      transition: width 300ms;
+
+      u {
+        position: absolute;
+        height: $barh;
+        background: $barbg;
+        text-decoration: none;
+        animation-name: vibe_w;
+        animation-duration: 650ms;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+      }
+    }
+  }
+
+  .collection {
+    padding-top: $ui_label_height;
+    i {
+      display: inline-block;
+    }
+  }
+
+  .textbox {
+    position: absolute;
+    padding-top: $ui_label_height;
+    font-size: 15px;
+    left: $outermg;
+    min-width: $msgw_min;
+    max-width: $msgw_max;
+    background-color: white;
+    z-index: 4;
+    box-sizing: border-box;
+  }
+}
+
+#player {
+  z-index: 2;
+}
+
+.softkeys {
+  position: fixed;
+  bottom: ($outermg * 4);
+  right: ($outermg * 4);
+  z-index: 5;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  width: (5 * $softkey_size);
+
+  button {
+    width: $softkey_size;
+    height: $softkey_size;
+    font-size: ($softkey_size / 3);
+  }
+
+  #key_up {
+    transform: rotate(-90deg);
+    grid-column: 2;
+    grid-row: 1;
+  }
+  #key_left {
+    transform: rotate(180deg);
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #key_down {
+    transform: rotate(90deg);
+    grid-column: 2;
+    grid-row: 2;
+  }
+  #key_right {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  #key_interact {
+    grid-column: 5;
+    grid-row: 2;
+  }
+}
+
+@media (hover: hover) {
+  // Proxy for whether we have a keyboard
+  .softkeys {
+    display: none;
+  }
+}

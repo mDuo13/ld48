@@ -1,0 +1,97 @@
+{
+  "gridsize": 8,
+  "bg": "url(peninsula.png)",
+  "objs": {
+    "player": {
+      "name": "You are here",
+      "x": 4,
+      "y": 7,
+      "visible": 1,
+      "img": "dowsing2.png"
+    },
+    "note": {
+      "name": "Another note...",
+      "x": 1,
+      "y": 1,
+      "visible": 1,
+      "interact": "read",
+      "msg": "I am getting a hang of using the dowsing rods. They can detect a staggering variety of hidden objects! I've collected a few just for safekeeping. I wonder if these coins are worth anything?",
+      "img": "note.png"
+    },
+    "hole": {
+      "name": "Hole",
+      "x": -1,
+      "y": -1,
+      "reacts": 1,
+      "interact": "clear",
+      "next": "3.html",
+      "img": "hole.png"
+    },
+    "coin1": {
+      "name": "Coin",
+      "x": -1,
+      "y": -1,
+      "reacts": 1,
+      "interact": "collect",
+      "img": "coin.png"
+    },
+    "bramble1": {
+      "name": "Thick brambles",
+      "x": 2,
+      "y": 4,
+      "visible": 1,
+      "blocking": 1,
+      "img": "bramble.png"
+    },
+    "bramble2": {
+      "name": "Thick brambles",
+      "x": 6,
+      "y": 2,
+      "visible": 1,
+      "blocking": 1,
+      "img": "bramble.png"
+    },
+    "wall1": {
+      "x": 7,
+      "y": 5,
+      "blocking": 1
+    },
+    "wall2": {
+      "x": 7,
+      "y": 6,
+      "blocking": 1
+    },
+    "wall3": {
+      "x": 6,
+      "y": 6,
+      "blocking": 1
+    }
+  },
+  "hud": {
+    "inv": {
+      "name": "Inventory",
+      "type": "collection",
+      "contents": {
+        "rod": {
+          "name": "Dowsing Rod",
+          "img": "dowsing.png",
+          "visible": 1
+        }
+      },
+      "visible": 1
+    },
+    "str": {
+      "name": "Vibration",
+      "type": "bar",
+      "val": 0.5,
+      "visible": 1,
+      "tooltip": "Activates when you're pointed at something reactive."
+    },
+    "temp": {
+      "name": "Temperature",
+      "type": "bar",
+      "val": 0,
+      "tooltip": "Activates when you're near reactive things. Stronger effect with more gems."
+    }
+  }
+}

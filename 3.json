@@ -1,0 +1,148 @@
+{
+  "gridsize": 8,
+  "bg": "url(flow.png)",
+  "objs": {
+    "player": {
+      "name": "You are here",
+      "x": 4,
+      "y": 7,
+      "visible": 1,
+      "img": "dowsing2.png"
+    },
+    "note": {
+      "name": "Another note...",
+      "x": 4,
+      "y": 3,
+      "visible": 1,
+      "interact": "read",
+      "msg": "I've made a staggering realization! I thought it was odd the rod stops reacting to the gems I pick up. But the more gems I hold, the more the rod heats up in the vicinity of other objects.",
+      "revealhud": "temp",
+      "img": "note.png"
+    },
+    "hole": {
+      "name": "Hole",
+      "reacts": 1,
+      "interact": "clear",
+      "next": "4.html",
+      "img": "hole.png"
+    },
+    "cover": {
+      "name": "It's covering something, but... locked?",
+      "x": -1,
+      "y": -1,
+      "reacts": 1,
+      "interact": "open",
+      "lock_threshold": 1,
+      "unlocks": "hole",
+      "img": "holecover.png"
+    },
+    "coin1": {
+      "name": "Coin",
+      "x": -1,
+      "y": -1,
+      "reacts": 1,
+      "interact": "collect",
+      "img": "coin.png"
+    },
+    "gem1": {
+      "name": "Shiny Gem",
+      "x": -1,
+      "y": -1,
+      "reacts": 2,
+      "interact": "collect",
+      "img": "gem.png"
+    },
+    "gem2": {
+      "name": "Shiny Gem",
+      "x": -1,
+      "y": -1,
+      "reacts": 2,
+      "interact": "collect",
+      "img": "gem.png"
+    },
+    "key1": {
+      "name": "The key to... something",
+      "x": -1,
+      "y": -1,
+      "reacts": 1,
+      "interact": "collect",
+      "key_power": 1,
+      "img": "key.png"
+    },
+    "bramble1": {
+      "name": "Thick brambles",
+      "x": 2,
+      "y": 4,
+      "visible": 1,
+      "blocking": 1,
+      "img": "bramble.png"
+    },
+    "wall1": {
+      "x": 7,
+      "y": 0,
+      "blocking": 1
+    },
+    "wall2": {
+      "x": 7,
+      "y": 2,
+      "blocking": 1
+    },
+    "wall3": {
+      "x": 7,
+      "y": 4,
+      "blocking": 1
+    },
+    "wall4": {
+      "x": 2,
+      "y": 0,
+      "blocking": 1
+    },
+    "wall5": {
+      "x": 0,
+      "y": 6,
+      "blocking": 1
+    },
+    "wall6": {
+      "x": 0,
+      "y": 7,
+      "blocking": 1
+    },
+    "wall7": {
+      "x": 1,
+      "y": 6,
+      "blocking": 1
+    },
+    "wall8": {
+      "x": 1,
+      "y": 7,
+      "blocking": 1
+    }
+  },
+  "hud": {
+    "inv": {
+      "name": "Inventory",
+      "type": "collection",
+      "contents": {
+        "rod": {
+          "name": "Dowsing Rod",
+          "img": "dowsing.png",
+          "visible": 1
+        }
+      },
+      "visible": 1
+    },
+    "str": {
+      "name": "Vibration",
+      "type": "bar",
+      "val": 0.5,
+      "visible": 1,
+      "tooltip": "Activates when you're pointed at something reactive."
+    },
+    "temp": {
+      "name": "Temperature",
+      "type": "bar",
+      "val": 0,
+      "tooltip": "Activates when you're near reactive things. Stronger effect with more gems."
+    }
+  }
+}
