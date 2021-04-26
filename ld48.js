@@ -76,7 +76,7 @@ function face(el, rot) {
   if (el.dataset.facingadj === undefined) fadj = F_UP
   else fadj = el.dataset.facingadj
 
-  el.style.rotate = `${rot + fadj}deg`
+  el.style.transform = `rotate(${rot + fadj}deg)`
   el.dataset.facing = rot
 }
 
