@@ -15,4 +15,5 @@ convert catprofile.png -scale 200%x200% $OUTDIR/catprofile.png
 sassc ld48.scss $OUTDIR/ld48.css
 cp ld48.js $OUTDIR
 cp index.html $OUTDIR
+cp index.js $OUTDIR
 cp cleocredit.jpg $OUTDIR

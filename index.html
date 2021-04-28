@@ -2,13 +2,8 @@
 <html>
 <head>
   <title>Vibin' Secrets</title>
-  <meta charset="utf8" />
+  <meta charset="utf-8" />
   <link rel="stylesheet" href="ld48.css" />
-  <script type="application/javascript">
-  function togglelevelselect(evt) {
-    document.querySelector(".levelselect ul").classList.toggle("d-none")
-  }
-  </script>
 </head>
 <body class="homepage">
 
@@ -18,12 +13,13 @@
 <section class="desc">
 <p>You've found a mysterious pair of dowsing rods in the attic and decided to go take them for a spin nearby to see if they do anything.</p>
 <p>Requires a modern browser (i.e. not Internet Explorer). Not optimized for mobile, but maybe playable.</p>
+</section>
 
 <a class="start" href="1.html">Start</a>
 
 <section class="levelselect">
   <h3>Level Select</h3>
-  <button onclick="togglelevelselect()">Show / Hide</button>
+  <button id="showlevelselect">Show / Hide</button>
   <ul class="d-none">
     <li><a href="1.html">Level 1</a></li>
     <li><a href="2.html">Level 2</a></li>
@@ -55,19 +51,6 @@
     <li><a href="https://atom.io/">Atom</a> - text editor</li>
   </ul>
 </section>
-
-<script type="application/javascript">
-(function(){
-const qp = new URLSearchParams(window.location.search)
-if (qp.has("coins")) {
-  const ncoins = parseInt(qp.get("coins"))
-  if (ncoins == 6) {
-    document.querySelector("body").insertAdjacentHTML('afterbegin', '<p class="congrats">🎉 Congrats on finding all 6 coins!</p>')
-  } else if (ncoins > 6) {
-    document.querySelector("body").insertAdjacentHTML('afterbegin', '<p class="congrats">🎉 Congrats on being a dirty cheater and/or finding a bug. There are only supposed to be 6 coins! 😂</p>')
-  }
-}
-})();
-</script>
+<script type="application/javascript" src="index.js"></script>
 </body>
 </html>
